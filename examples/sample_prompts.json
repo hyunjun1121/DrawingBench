@@ -1,0 +1,30 @@
+[
+  {
+    "id": "basic_001",
+    "prompt": "Draw a red circle in the center of the canvas",
+    "category": "basic_shapes",
+    "difficulty": "easy",
+    "criteria": {}
+  },
+  {
+    "id": "basic_004",
+    "prompt": "Draw three circles in a row: red, green, blue",
+    "category": "basic_shapes",
+    "difficulty": "medium",
+    "criteria": {}
+  },
+  {
+    "id": "house_002",
+    "prompt": "Draw a house with roof, walls, door, and two windows",
+    "category": "objects",
+    "difficulty": "hard",
+    "criteria": {}
+  },
+  {
+    "id": "precision_001",
+    "prompt": "Draw a 3x3 grid of equally sized squares (each 80x80 pixels)",
+    "category": "precision",
+    "difficulty": "very_hard",
+    "criteria": {}
+  }
+]

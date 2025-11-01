@@ -1,0 +1,5976 @@
+{
+  "metadata": {
+    "version": "3.0",
+    "description": "Consolidated drawing benchmark dataset with all prompts",
+    "total_prompts": 250,
+    "canvas_size": [
+      1000,
+      700
+    ],
+    "canvas_offset": [
+      90,
+      70
+    ],
+    "difficulty_distribution": {
+      "easy": 112,
+      "medium": 97,
+      "hard": 21,
+      "very_hard": 20
+    },
+    "category_distribution": {
+      "basic_shapes": 21,
+      "objects": 5,
+      "nature": 2,
+      "scenes": 1,
+      "patterns": 2,
+      "diagrams": 2,
+      "ui_elements": 2,
+      "advanced": 3,
+      "efficiency_test": 2,
+      "spatial_reasoning": 71,
+      "creative": 2,
+      "precision_test": 1,
+      "tool_switching": 1,
+      "general": 24,
+      "color_reasoning": 44,
+      "compositional": 11,
+      "numeracy": 36,
+      "precision": 4,
+      "pattern": 4,
+      "composition": 4,
+      "symmetry": 2,
+      "angle": 2,
+      "spatial": 1,
+      "size": 1,
+      "complex": 2
+    },
+    "source_distribution": {
+      "original": 50,
+      "adapted": 200
+    },
+    "difficulty_levels": {
+      "easy": "Simple single-object tasks, 1-2 tools, 1-2 colors",
+      "medium": "Multi-object or multi-color tasks, 2-3 tools, 2-4 colors",
+      "hard": "Complex scenes, 3+ tools, 3+ colors, spatial requirements",
+      "very_hard": "Precision tasks, exact measurements, patterns, symmetry"
+    }
+  },
+  "prompts": [
+    {
+      "id": "basic_001",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a red circle in the center of the canvas",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05
+      },
+      "hints": [
+        "Select red color at (453, 25)",
+        "Use pen tool at (35, 45)",
+        "Draw circular motion with mouseDown/moveTo/mouseUp"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "basic_002",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a blue square using the rectangle tool",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "required_colors": [
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.03
+      },
+      "hints": [
+        "Select rectangle tool at (35, 365)",
+        "Select blue color at (549, 25)",
+        "Use mouseDown at top-left, mouseUp at bottom-right"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "basic_003",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a yellow star with 5 points",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.04
+      },
+      "hints": [
+        "Calculate 5-point star coordinates mathematically",
+        "Connect points in star pattern (not sequential)"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "basic_004",
+      "category": "basic_shapes",
+      "difficulty": "medium",
+      "prompt": "Draw three circles in a row: red, green, blue",
+      "criteria": {
+        "required_tools": [
+          "pen",
+          "circle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Space circles evenly horizontally",
+        "Change color between each circle"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "basic_005",
+      "category": "basic_shapes",
+      "difficulty": "medium",
+      "prompt": "Fill a square with yellow color",
+      "criteria": {
+        "required_tools": [
+          "pen",
+          "fill"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFF00"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "First draw square outline with pen",
+        "Then select fill tool and yellow color",
+        "Click inside the square to fill"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "house_001",
+      "category": "objects",
+      "difficulty": "medium",
+      "prompt": "Draw a simple house with triangular red roof and rectangular walls",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Draw rectangle for walls first",
+        "Draw triangle on top for roof",
+        "Ensure roof sits on top of walls"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "house_002",
+      "category": "objects",
+      "difficulty": "hard",
+      "prompt": "Draw a house with roof, walls, door, and two windows",
+      "criteria": {
+        "required_tools": [
+          "pen",
+          "rectangle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#8B4513"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.1
+      },
+      "hints": [
+        "Use rectangle tool for walls, door, windows",
+        "Use pen for triangular roof",
+        "Position windows symmetrically"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "face_001",
+      "category": "objects",
+      "difficulty": "medium",
+      "prompt": "Draw a smiley face with yellow circle, two eyes, and smile",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#000000"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Use circle tool for face outline",
+        "Draw two small circles for eyes",
+        "Draw curved line for smile"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "tree_001",
+      "category": "objects",
+      "difficulty": "medium",
+      "prompt": "Draw a tree with brown trunk and green circular crown",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "required_colors": [
+          "#8B4513",
+          "#00FF00"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Use rectangle for trunk",
+        "Use circle for tree crown",
+        "Position crown above trunk"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "car_001",
+      "category": "objects",
+      "difficulty": "hard",
+      "prompt": "Draw a simple car with rectangular body and two circular wheels",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#000000"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.08
+      },
+      "hints": [
+        "Draw rectangle for car body",
+        "Draw two circles below for wheels",
+        "Ensure wheels touch the body"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "sun_001",
+      "category": "nature",
+      "difficulty": "medium",
+      "prompt": "Draw a yellow sun with rays extending outward",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "line"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#FF0000"
+        ],
+        "min_segments": 9,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Draw circle for sun",
+        "Use line tool for rays",
+        "Draw 8 rays in different directions"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "flower_001",
+      "category": "nature",
+      "difficulty": "hard",
+      "prompt": "Draw a flower with 5 petals around a center circle",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#FF00FF",
+          "#FFFF00"
+        ],
+        "min_segments": 6,
+        "min_coverage": 0.08
+      },
+      "hints": [
+        "Draw center circle first",
+        "Draw 5 circles around center for petals",
+        "Use different color for center and petals"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "landscape_001",
+      "category": "scenes",
+      "difficulty": "hard",
+      "prompt": "Draw a simple landscape with sun, cloud, and ground",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "rectangle",
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#FFFFFF",
+          "#00FF00"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Draw sun in top corner",
+        "Draw clouds using overlapping circles",
+        "Draw ground as rectangle at bottom"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_001",
+      "category": "patterns",
+      "difficulty": "medium",
+      "prompt": "Draw a checkerboard pattern with 4 squares (2x2)",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "fill"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Draw 4 rectangles in 2x2 grid",
+        "Fill alternating squares with black"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_002",
+      "category": "patterns",
+      "difficulty": "hard",
+      "prompt": "Draw a symmetric pattern with 4 circles at corners and 1 in center",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Calculate corner positions symmetrically",
+        "Place center circle at canvas center"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "chart_001",
+      "category": "diagrams",
+      "difficulty": "medium",
+      "prompt": "Draw a bar chart with 4 vertical bars of different heights",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.1,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Use rectangle tool for each bar",
+        "Align bars horizontally with equal spacing",
+        "Vary heights: short, medium, tall, medium"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "diagram_001",
+      "category": "diagrams",
+      "difficulty": "medium",
+      "prompt": "Draw a simple flowchart with 3 boxes connected by arrows",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "min_segments": 6,
+        "min_coverage": 0.15,
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "hints": [
+        "Draw 3 rectangles vertically",
+        "Connect with lines (arrows)",
+        "Ensure proper spacing"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "text_icon_001",
+      "category": "ui_elements",
+      "difficulty": "easy",
+      "prompt": "Draw a simple button shape (rounded rectangle)",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.02,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Draw a rectangle with reasonable proportions",
+        "Position in center of canvas"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "text_icon_002",
+      "category": "ui_elements",
+      "difficulty": "medium",
+      "prompt": "Draw a checkbox with a checkmark inside",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "hints": [
+        "Draw small square for checkbox",
+        "Draw two lines forming checkmark inside"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "multi_color_001",
+      "category": "advanced",
+      "difficulty": "hard",
+      "prompt": "Draw a rainbow with 5 colored arcs",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#FFFF00",
+          "#00FF00",
+          "#0000FF",
+          "#FF00FF"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Draw concentric arcs from top to bottom",
+        "Change color for each arc",
+        "Colors: red, yellow, green, blue, purple"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "advanced_001",
+      "category": "advanced",
+      "difficulty": "hard",
+      "prompt": "Draw a traffic light with red, yellow, green circles in a rectangle",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000",
+          "#FFFF00",
+          "#00FF00"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.08
+      },
+      "hints": [
+        "Draw vertical rectangle for frame",
+        "Draw 3 circles inside vertically",
+        "Top: red, middle: yellow, bottom: green"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "advanced_002",
+      "category": "advanced",
+      "difficulty": "hard",
+      "prompt": "Draw a heart shape using two circles and a triangle",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "fill"
+        ],
+        "required_colors": [
+          "#FF0000"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.06
+      },
+      "hints": [
+        "Draw two circles at top for curves",
+        "Fill the area to form heart shape",
+        "Position carefully for symmetry"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "efficiency_001",
+      "category": "efficiency_test",
+      "difficulty": "medium",
+      "prompt": "Draw a square as efficiently as possible",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "max_actions": 10,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Use rectangle tool for efficiency",
+        "Minimize action count: select tool, select color, draw"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "efficiency_002",
+      "category": "efficiency_test",
+      "difficulty": "hard",
+      "prompt": "Draw 5 circles as efficiently as possible",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 5,
+        "max_actions": 30,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Use circle tool instead of pen",
+        "Select tool and color once",
+        "Draw all circles without changing settings"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "spatial_001",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a circle in the top-left quarter of the canvas",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "position_constraint": {
+          "x_max": 590,
+          "y_max": 420
+        },
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Canvas center is at (590, 420)",
+        "Top-left quarter: x < 590, y < 420",
+        "Position circle center around (340, 270)"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "spatial_002",
+      "category": "spatial_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw 4 squares in each corner of the canvas",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 4,
+        "corner_placement": true,
+        "required_colors": [
+          "#000000"
+        ],
+        "min_coverage": 0.08
+      },
+      "hints": [
+        "Top-left: ~(200, 200)",
+        "Top-right: ~(900, 200)",
+        "Bottom-left: ~(200, 650)",
+        "Bottom-right: ~(900, 650)"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "creative_001",
+      "category": "creative",
+      "difficulty": "hard",
+      "prompt": "Draw a robot with rectangular body, head, and circular eyes",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.1,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Stack rectangles for body and head",
+        "Add two circles for eyes",
+        "Keep proportions reasonable"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "creative_002",
+      "category": "creative",
+      "difficulty": "hard",
+      "prompt": "Draw a sailboat on water with sun in sky",
+      "criteria": {
+        "required_tools": [
+          "pen",
+          "line",
+          "circle"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Draw triangle for sail",
+        "Draw boat hull at bottom",
+        "Add horizontal line for water",
+        "Add sun in corner"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "precision_001",
+      "category": "precision_test",
+      "difficulty": "hard",
+      "prompt": "Draw a perfect square with sides of exactly 200 pixels",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "size_constraint": {
+          "width": 200,
+          "height": 200,
+          "tolerance": 10
+        },
+        "required_colors": [
+          "#000000"
+        ],
+        "min_coverage": 0.08
+      },
+      "hints": [
+        "Calculate exact coordinates",
+        "mouseDown at (x, y), mouseUp at (x+200, y+200)"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "multi_tool_001",
+      "category": "tool_switching",
+      "difficulty": "hard",
+      "prompt": "Draw a house using all available shape tools (line, rectangle, circle)",
+      "criteria": {
+        "required_tools": [
+          "line",
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.1,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "hints": [
+        "Use rectangle for walls and door",
+        "Use line for roof",
+        "Use circle for window or doorknob"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "adapted_001",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a tall basketball player and a short gymnast",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a tall basketball player and a short gymnast",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_002",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the smooth, glossy surface of the ceramic vase reflected the light, a shining work of art.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth, glossy surface of the ceramic vase reflected the light, a shining work of art.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_003",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a mountain is towering in the distance.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A mountain is towering in the distance.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_004",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a tall oak tree and a short sapling",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a tall oak tree and a short sapling",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_005",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a tall skyscraper and a short street lamp",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a tall skyscraper and a short street lamp",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_006",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the rich, deep hues of the sunset painted the sky with a fiery display of color, a stunning work of natural art.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The rich, deep hues of the sunset painted the sky with a fiery display of color, a stunning work of natural art.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_007",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a rectangle to represent a car hidden by a lamp",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a car hidden by a lamp",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_008",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a bee is buzzing around a flower.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A bee is buzzing around a flower.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_009",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the fluffy clouds floated in the blue sky and the dark storm clouds.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "The fluffy clouds floated in the blue sky and the dark storm clouds.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_010",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the rugged, rocky terrain of the mountain trail was a challenge for even the most experienced hikers.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The rugged, rocky terrain of the mountain trail was a challenge for even the most experienced hikers.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_011",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a red car and a white cloud-like shape",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a red car and a white sheep",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_012",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a brown boat and a blue cow",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#8B4513"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a brown boat and a blue cow",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_013",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a red hat and a black scarf",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a red hat and a black scarf",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_014",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw the vibrant, swirling colors of the sunset painted the sky with a breathtaking palette of pinks, oranges, and purples.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#FFA500",
+          "#FF1493"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The vibrant, swirling colors of the sunset painted the sky with a breathtaking palette of pinks, oranges, and purples.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_015",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a black cloud and a white sky",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a black cloud and a white sky",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_016",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a brown tree and a green grass",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#8B4513"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a brown tree and a green grass",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use green color at (501, 25)"
+      ]
+    },
+    {
+      "id": "adapted_017",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a black car and a red motorcycle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a black car and a red motorcycle",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_018",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a green leaf and a yellow flower",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a green leaf and a yellow flower",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use green color at (501, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_019",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a brown bear and a blue cup",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#8B4513"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a brown bear and a blue cup",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_020",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a blue sun and a yellow ocean",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a blue sun and a yellow ocean",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_021",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the actor is rehearsing lines for a play.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The actor is rehearsing lines for a play.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)"
+      ]
+    },
+    {
+      "id": "adapted_022",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the smooth, cool surface of the ice rink was perfect for the graceful figure skater, as she twirled and glided across the ice.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth, cool surface of the ice rink was perfect for the graceful figure skater, as she twirled and glided across the ice.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_023",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the tennis player is serving the ball across the net.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The tennis player is serving the ball across the net.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_024",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw an oval mirror and a rectangular vanity stool",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval mirror and a rectangular vanity stool",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_025",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw an oval rug and a rectangular couch",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval rug and a rectangular couch",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_026",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the oval platter and the round bowl were used for serving dinner.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The oval platter and the round bowl were used for serving dinner.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_027",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the vibrant, glittering lights of the carnival rides spun and twirled in dizzying circles, thrilling and delighting the adventurous.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The vibrant, glittering lights of the carnival rides spun and twirled in dizzying circles, thrilling and delighting the adventurous.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_028",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw an oval bathtub and a rectangular soap dish",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval bathtub and a rectangular soap dish",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_029",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw an oval platter and a rectangular serving dish",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval platter and a rectangular serving dish",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_030",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw an oval vase and a rectangular table",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval vase and a rectangular table",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_031",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pig behind a circleoon",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pig behind a balloon",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_032",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond watch and a round cufflink",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond watch and a round cufflink",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_033",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw the square coaster was on top of the circular tablecloth.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "position_constraint": {
+          "type": "above",
+          "description": "First object should be in top half of canvas"
+        },
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The square coaster was on top of the circular tablecloth.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_034",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a cubic Rubik's cube and a pentagonal game box",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cubic Rubik's cube and a pentagonal game box",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_035",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw an oblong carrot and a teardrop pear",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oblong carrot and a teardrop pear",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_036",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond cufflink and a pyramidal tie clip",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond cufflink and a pyramidal tie clip",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_037",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a circleoon behind a sofa",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a balloon behind a sofa",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_038",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a spherical soccer ball and a conical soccer goal",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a spherical soccer ball and a conical soccer goal",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_039",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pentagonal badge and a pyramidal paperweight",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pentagonal badge and a pyramidal paperweight",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_040",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pyramidal paperweight and a pentagonal paperclip holder",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pyramidal paperweight and a pentagonal paperclip holder",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_041",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval mirror and a square picture frame",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval mirror and a square picture frame",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_042",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw the teardrop earrings with their oval pearls and triangular hooks added elegance to the crescent neckline.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The teardrop earrings with their oval pearls and triangular hooks added elegance to the crescent neckline.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)"
+      ]
+    },
+    {
+      "id": "adapted_043",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval coffee table and a square end table",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval coffee table and a square end table",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_044",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw a round muffin and a square muffin liner",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle",
+          "line"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a round muffin and a square muffin liner",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)",
+        "Select the line tool at coordinates (35, 285)"
+      ]
+    },
+    {
+      "id": "adapted_045",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval bathtub and a square bath mat",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval bathtub and a square bath mat",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_046",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw the vibrant, swirling colors of the Northern Lights danced across the starry sky, a celestial light show.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The vibrant, swirling colors of the Northern Lights danced across the starry sky, a celestial light show.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_047",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval serving platter and a square dish",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval serving platter and a square dish",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_048",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval dining table and a square dining chair",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval dining table and a square dining chair",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_049",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval picture frame and a square painting",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval picture frame and a square painting",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_050",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval mirror and a square painting",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval mirror and a square painting",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_051",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw four paintings and two rectangles to represent cars",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four paintings and two cars",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_052",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw four 100x100 pixel rectangles and three ships",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four cups and three ships",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_053",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw two 100x100 pixel rectangles",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "two cups",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_054",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw eight boats",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "eight boats",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_055",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw four bicycles lined up by the garage",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four bicycles lined up by the garage",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_056",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw four boats, four cameras and four kites",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four boats, four cameras and four kites",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_057",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw three trains carried three 100x100 pixel rectangles of tea",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three trains carried three cups of tea",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_058",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw four flags",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four flags",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_059",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw three bottles",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three bottles",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_060",
+      "category": "numeracy",
+      "difficulty": "easy",
+      "prompt": "Draw seven 100x100 pixel rectangles",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 7,
+        "min_coverage": 0.15,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "seven cups",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_061",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a black moon and a white sky",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "a black moon and a white sky",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_062",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the round green ball bounced within 100 pixels of the square blue block.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The round green ball bounced near the square blue block.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)",
+        "Use green color at (501, 25)"
+      ]
+    },
+    {
+      "id": "adapted_063",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the sleek, black motorcycles roared down the winding mountain roads, their riders clad in leather jackets and helmets.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The sleek, black motorcycles roared down the winding mountain roads, their riders clad in leather jackets and helmets.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_064",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the bright red sports car drove past the dull grey sedan.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#808080"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The bright red sports car drove past the dull grey sedan.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_065",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the warm yellow sun shone down on the cold grey pavement.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#FF0000",
+          "#808080"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The warm yellow sun shone down on the cold grey pavement.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use yellow color at (597, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_066",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a long, narrow black kitchen with yellow and white floor tiles.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFF00",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "A long, narrow black kitchen with yellow and white floor tiles.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use black color at (405, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_067",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the curved orange basketball rolled next to the flat black basketball shoes.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000",
+          "#FFA500"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The curved orange basketball rolled next to the flat black basketball shoes.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Use black color at (405, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_068",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the fluffy white clouds floated above the calm blue lake.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "above",
+          "description": "First object should be in top half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The fluffy white clouds floated above the calm blue lake.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_069",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the warm yellow sun shone down on the cold grey concrete.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#FF0000",
+          "#808080"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The warm yellow sun shone down on the cold grey concrete.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use yellow color at (597, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_070",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the sleek black sports bike sped past the bright green trees.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#00FF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The sleek black sports bike sped past the bright green trees.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use green color at (501, 25)"
+      ]
+    },
+    {
+      "id": "adapted_071",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the sleek black limousine pulled up next to the bright red carpet.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The sleek black limousine pulled up next to the bright red carpet.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_072",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the long red scarf draped over the short black jacket.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The long red scarf draped over the short black jacket.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_073",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a red balloon and a blue ribbon",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "a red balloon and a blue ribbon",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Use red color at (453, 25)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_074",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the brown box was next to the yellow envelope.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#FF0000",
+          "#8B4513"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The brown box was next to the yellow envelope.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the line tool at coordinates (35, 285)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_075",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the soft white clouds contrasted with the sharp blue sky.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The soft white clouds contrasted with the sharp blue sky.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_076",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a stainless steel oven sits between white cupboards with black counter tops while sun shines through the kitchen windows.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "above",
+          "description": "First object should be in top half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "A stainless steel oven sits between white cupboards with black counter tops while sun shines through the kitchen windows.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_077",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the round yellow tennis ball bounced off the green tennis court.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The round yellow tennis ball bounced off the green tennis court.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Use green color at (501, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_078",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the smooth black river flowed next to the tall green trees.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#00FF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth black river flowed next to the tall green trees.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use green color at (501, 25)"
+      ]
+    },
+    {
+      "id": "adapted_079",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a long, narrow yellow kitchen with black and white floor tiles.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFF00",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "A long, narrow yellow kitchen with black and white floor tiles.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use black color at (405, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_080",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the fiery, blazing sun sank below the horizon, painting the sky with a spectrum of orange and red hues, a stunning display of natural beauty.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#FFA500"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "below",
+          "description": "First object should be in bottom half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The fiery, blazing sun sank below the horizon, painting the sky with a spectrum of orange and red hues, a stunning display of natural beauty.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_081",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one car in the lower part of canvas.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "One car on the street.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_082",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three helmets, two bees and one cup",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three helmets, two bees and one cup",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_083",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one car, three flags and four ducks",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one car, three flags and four ducks",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_084",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw four couches, four shrimp, one cup and one candle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four couches, four shrimp, one cup and one candle",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_085",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw two swans and one bottle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "two swans and one bottle",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_086",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one television, two strawberries and one bottle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one television, two strawberries and one bottle",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_087",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three stools, three flags, three tables, four boats and four pillows",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three stools, three flags, three tables, four boats and four pillows",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_088",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one stool, four balloons and three bananas",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one stool, four balloons and three bananas",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_089",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three bottles stood next to three printers on the shelf",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.15,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three bottles stood next to three printers on the shelf",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_090",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three airplanes, four knives, one flag and three sofas",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three airplanes, four knives, one flag and three sofas",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_091",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw seven balloons",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 7,
+        "min_coverage": 0.15,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "seven balloons",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_092",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw four boats floated on the lake",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four boats floated on the lake",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_093",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one balloon and two desks",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one balloon and two desks",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_094",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one balloon, four toys, a computer, three kites, and a 100x100 pixel rectangle filled the room",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one balloon, four toys, a computer, three kites, and a phone filled the room",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_095",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw two microwaves, a candle, three desks, three bicycles, and three 100x100 pixel rectangles cluttered the kitchen",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12
+      },
+      "source": "adapted",
+      "original_prompt": "two microwaves, a candle, three desks, three bicycles, and three cups cluttered the kitchen",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Use red color at (453, 25)",
+        "Make sure to draw the correct number of objects"
+      ]
+    },
+    {
+      "id": "adapted_096",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one helicopter, four pears, one rabbit, two flags and three peaches",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one helicopter, four pears, one rabbit, two flags and three peaches",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_097",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one candle lit up a cozy cup",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one candle lit up a cozy cup",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_098",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw two clocks, one frog, one book and two 100x100 pixel rectangles",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "two clocks, one frog, one book and two cups",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_099",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one egg, three camels, four rectangles to represent cars and four pillows",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one egg, three camels, four cars and four pillows",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_100",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw a gardener is tending to their plants, carefully watering and pruning each one.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A gardener is tending to their plants, carefully watering and pruning each one.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_101",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the spherical lamp with its diamond shade and conical base illuminated the pentagonal foyer.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The spherical lamp with its diamond shade and conical base illuminated the pentagonal foyer.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_102",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the pentagonal pendant lamp with its conical shade and spherical bulb looked great in the oblong living room.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The pentagonal pendant lamp with its conical shade and spherical bulb looked great in the oblong living room.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_103",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw new York Skyline with 'NeurIPS' written with fireworks on the sky.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "New York Skyline with 'NeurIPS' written with fireworks on the sky.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_104",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the oblong tray with its pentagonal corners and spherical handles served drinks in the triangular garden.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The oblong tray with its pentagonal corners and spherical handles served drinks in the triangular garden.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_105",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a spherical beach ball and a conical ice cream cone",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a spherical beach ball and a conical ice cream cone",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_106",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the oval plate was on the right of the round bowl.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        },
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The oval plate was on the right of the round bowl.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_107",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the astronaut floated weightlessly in space, staring out at the vast expanse of the universe.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The astronaut floated weightlessly in space, staring out at the vast expanse of the universe.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_108",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the diamond wall mirror with its spherical frame and triangular etching added depth to the oval bathroom.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The diamond wall mirror with its spherical frame and triangular etching added depth to the oval bathroom.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_109",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the cylindrical vase with its rectangular pattern and diamond accents was a lovely addition to the spherical coffee table.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The cylindrical vase with its rectangular pattern and diamond accents was a lovely addition to the spherical coffee table.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_110",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the rough square was nestled between the smooth rectangle and the bumpy sphere.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The rough square was nestled between the smooth rectangle and the bumpy sphere.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_111",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the smooth wooden surface reflected the bright light and the dark shade.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        },
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth wooden surface reflected the bright light and the dark shade.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_112",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the smooth metal surface reflected the bright sky and the dark clouds.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        },
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth metal surface reflected the bright sky and the dark clouds.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_113",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the teardrop pendant with its crescent chain and oval stone added a touch of elegance to the rectangular neckline.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The teardrop pendant with its crescent chain and oval stone added a touch of elegance to the rectangular neckline.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_114",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the conical hat and the spherical ball were the objects of attention in the magic show.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The conical hat and the spherical ball were the objects of attention in the magic show.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_115",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the pentagonal prism and the triangular pyramid were the shapes that he struggled with the most in math class.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The pentagonal prism and the triangular pyramid were the shapes that he struggled with the most in math class.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_116",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the round plate was on the left of the square bowl.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "left",
+          "description": "First object should be in left half of canvas"
+        },
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The round plate was on the left of the square bowl.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_117",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the fluttering butterfly landed on the fragrant flower and the thorny thistle.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The fluttering butterfly landed on the fragrant flower and the thorny thistle.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_118",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the spherical ball and the pentagonal pyramid were the objects of focus in the geometry lesson.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The spherical ball and the pentagonal pyramid were the objects of focus in the geometry lesson.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_119",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a scientist is conducting an experiment in the lab, carefully measuring and recording data.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A scientist is conducting an experiment in the lab, carefully measuring and recording data.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_120",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the pentagonal desk with its oblong drawers and diamond handles provided a functional workspace in the square office.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The pentagonal desk with its oblong drawers and diamond handles provided a functional workspace in the square office.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_121",
+      "category": "basic_shapes",
+      "difficulty": "medium",
+      "prompt": "Draw the circular clock with its triangular hands and square frame told time in the teardrop classroom.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The circular clock with its triangular hands and square frame told time in the teardrop classroom.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_122",
+      "category": "basic_shapes",
+      "difficulty": "medium",
+      "prompt": "Draw the round knob and the square plate were attached to the door.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The round knob and the square plate were attached to the door.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_123",
+      "category": "spatial_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the teardrop pendant with its square gemstone and circular chain adorned the triangular neckline.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The teardrop pendant with its square gemstone and circular chain adorned the triangular neckline.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_124",
+      "category": "spatial_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw a row of cubic boxes and a pile of pyramidal stones were stacked neatly in the corner of the room.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A row of cubic boxes and a pile of pyramidal stones were stacked neatly in the corner of the room.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_125",
+      "category": "color_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the warm yellow sun shone down on the cool blue water.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05
+      },
+      "source": "adapted",
+      "original_prompt": "The warm yellow sun shone down on the cool blue water.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_126",
+      "category": "color_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the warm yellow light shone down on the plush red carpet.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05
+      },
+      "source": "adapted",
+      "original_prompt": "The warm yellow light shone down on the plush red carpet.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_127",
+      "category": "color_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the circular yellow sun shone down on the flat blue ocean.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05
+      },
+      "source": "adapted",
+      "original_prompt": "The circular yellow sun shone down on the flat blue ocean.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_128",
+      "category": "color_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the red triangle was nestled between the green circle and the blue square.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.05
+      },
+      "source": "adapted",
+      "original_prompt": "The red triangle was nestled between the green circle and the blue square.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_129",
+      "category": "color_reasoning",
+      "difficulty": "hard",
+      "prompt": "Draw the warm yellow sun shone down on the cool green grass.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05
+      },
+      "source": "adapted",
+      "original_prompt": "The warm yellow sun shone down on the cool green grass.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use green color at (501, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_130",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a cylindrical vase and a rectangular flower arrangement",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cylindrical vase and a rectangular flower arrangement",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_131",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a pyramidal gift box and a cubic gift wrap",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pyramidal gift box and a cubic gift wrap",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_132",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the smooth curve was balanced on the edge of the jagged zigzag and the curved line.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth curve was balanced on the edge of the jagged zigzag and the curved line.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_133",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond tiara and a round necklace",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond tiara and a round necklace",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_134",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a conical hat and a diamond pair of sunglasses",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a conical hat and a diamond pair of sunglasses",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_135",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a spherical soccer ball and a conical corner flag",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a spherical soccer ball and a conical corner flag",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_136",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a rabbit in front of a circleoon",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a rabbit in front of a balloon",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_137",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw the sleek silver airplane flew above the fluffy white clouds.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "position_constraint": {
+          "type": "above",
+          "description": "First object should be in top half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The sleek silver airplane flew above the fluffy white clouds.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use white color at (741, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_138",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a blue jacket and a green scarf",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a blue jacket and a green scarf",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use green color at (501, 25)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_139",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a cylindrical soda can and a teardrop bottle opener",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cylindrical soda can and a teardrop bottle opener",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_140",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw two rectangles to represent cars in the lower part of canvas.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "Two cars on the street.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_141",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a green cup and a blue vase",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a green cup and a blue vase",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use green color at (501, 25)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_142",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw an oblong carrot and a teardrop plum",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oblong carrot and a teardrop plum",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_143",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a blue book and a red cup",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a blue book and a red cup",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_144",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the conical mountain and the crescent beach were the contrasting views from the hotel room.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The conical mountain and the crescent beach were the contrasting views from the hotel room.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_145",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pentagonal shelf and a pyramidal trinket box",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pentagonal shelf and a pyramidal trinket box",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_146",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pentagonal chocolate box and a spherical chocolate truffle",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pentagonal chocolate box and a spherical chocolate truffle",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_147",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the tall tree and the short shrub created a contrast in the garden.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The tall tree and the short shrub created a contrast in the garden.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_148",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a basketball player is dribbling down the court, eyes on the basket as they shoot.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A basketball player is dribbling down the court, eyes on the basket as they shoot.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_149",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond ring and a round pendant",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond ring and a round pendant",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_150",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a bicycle behind a 100x100 pixel rectangle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a bicycle behind a cup",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_151",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three 100x100 pixel rectangles and one cow",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three cups and one cow",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_152",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a triangular purple flower pot. A purple flower pot in the shape of a triangle.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A triangular purple flower pot. A purple flower pot in the shape of a triangle.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_153",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a circleoon behind a desk",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a balloon behind a desk",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_154",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw the soft, warm glow of the lantern cast flickering shadows across the room, a cozy ambiance of comfort and tranquility.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The soft, warm glow of the lantern cast flickering shadows across the room, a cozy ambiance of comfort and tranquility.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_155",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a spherical bouncy ball and a conical party horn",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a spherical bouncy ball and a conical party horn",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_156",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the fragrant flowers bloomed on the sturdy stem and the thorny bush.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The fragrant flowers bloomed on the sturdy stem and the thorny bush.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_157",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw the smooth, polished surface of the crystal vase sparkled in the candlelight, a luxurious centerpiece of beauty and refinement.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth, polished surface of the crystal vase sparkled in the candlelight, a luxurious centerpiece of beauty and refinement.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_158",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw the fluffy white clouds floated above the deep purple sunset.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "position_constraint": {
+          "type": "above",
+          "description": "First object should be in top half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The fluffy white clouds floated above the deep purple sunset.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use white color at (741, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_159",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three bags and one cup",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three bags and one cup",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_160",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a tall tree and a short bush",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a tall tree and a short bush",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_161",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a round doughnut and a square napkin.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a round doughnut and a square napkin.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_162",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the shiny car raced on the smooth highway and the bumpy back road.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The shiny car raced on the smooth highway and the bumpy back road.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_163",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the seamstress carefully sewed the fabric together, creating a beautiful garment.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The seamstress carefully sewed the fabric together, creating a beautiful garment.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_164",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw one bowl, one bottle, three bananas and two circles",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "one bowl, one bottle, three bananas and two plates",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_165",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a red rose and a pink carnation",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#FF1493"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a red rose and a pink carnation",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_166",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the oblong bench with its pentagonal cushions and crescent legs provided a comfortable seating option in the triangular foyer.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The oblong bench with its pentagonal cushions and crescent legs provided a comfortable seating option in the triangular foyer.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_167",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a boy is playing basketball in the driveway.",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A boy is playing basketball in the driveway.",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)"
+      ]
+    },
+    {
+      "id": "adapted_168",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a rectangle to represent a car behind a table",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a car behind a table",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_169",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a red backpack and a blue car",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#0000FF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a red backpack and a blue car",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)",
+        "Use blue color at (549, 25)"
+      ]
+    },
+    {
+      "id": "adapted_170",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the smooth glass surface reflected the colorful rainbow and the gray sky.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#808080"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The smooth glass surface reflected the colorful rainbow and the gray sky.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_171",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the spiky rectangle was protruding out of the jagged oval and the rounded pentagon.",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle"
+        ],
+        "min_segments": 2,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The spiky rectangle was protruding out of the jagged oval and the rounded pentagon.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects"
+      ]
+    },
+    {
+      "id": "adapted_172",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the translucent sphere floated within 100 pixels of the opaque cube and the metallic hexagon.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The translucent sphere floated near the opaque cube and the metallic hexagon.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_173",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a cubic box and a conical party hat",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cubic box and a conical party hat",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_174",
+      "category": "color_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the sleek black sports car sped past the bright green trees.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#00FF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "position_constraint": {
+          "type": "right",
+          "description": "First object should be in right half of canvas"
+        }
+      },
+      "source": "adapted",
+      "original_prompt": "The sleek black sports car sped past the bright green trees.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use black color at (405, 25)",
+        "Use green color at (501, 25)"
+      ]
+    },
+    {
+      "id": "adapted_175",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the fluffy cloud floated over the jagged mountain and the sandy beach.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The fluffy cloud floated over the jagged mountain and the sandy beach.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_176",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a cylindrical vase and a diamond flower arrangement",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cylindrical vase and a diamond flower arrangement",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_177",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the heavy traffic jammed the busy intersection and the quiet side street.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The heavy traffic jammed the busy intersection and the quiet side street.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_178",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pentagonal pencil and a cylindrical pencil sharpener",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pentagonal pencil and a cylindrical pencil sharpener",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_179",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a pentagonal notebook and a triangular pencil holder",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pentagonal notebook and a triangular pencil holder",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_180",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a tall redwood tree and a short shrub",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#FF0000"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a tall redwood tree and a short shrub",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use red color at (453, 25)"
+      ]
+    },
+    {
+      "id": "adapted_181",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond bracelet and a round watch face",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond bracelet and a round watch face",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_182",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw the magician is performing a trick with cards.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The magician is performing a trick with cards.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_183",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a yellow grass and a green sun",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#00FF00",
+          "#FFFF00"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a yellow grass and a green sun",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use green color at (501, 25)",
+        "Use yellow color at (597, 25)"
+      ]
+    },
+    {
+      "id": "adapted_184",
+      "category": "basic_shapes",
+      "difficulty": "easy",
+      "prompt": "Draw a rectangular envelope and a oval stamp",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a rectangular envelope and a oval stamp",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_185",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the plump, juicy grapes hung low on the vine, ripening in the warm, summer sun.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The plump, juicy grapes hung low on the vine, ripening in the warm, summer sun.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_186",
+      "category": "color_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a white cloud and a blue sky",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FFFFFF"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20
+      },
+      "source": "adapted",
+      "original_prompt": "a white cloud and a blue sky",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Use blue color at (549, 25)",
+        "Use white color at (741, 25)"
+      ]
+    },
+    {
+      "id": "adapted_187",
+      "category": "compositional",
+      "difficulty": "easy",
+      "prompt": "Draw an oval table and a square placemat",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "an oval table and a square placemat",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)"
+      ]
+    },
+    {
+      "id": "adapted_188",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a cubic book and a cylindrical water bottle",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cubic book and a cylindrical water bottle",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_189",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a cubic die and a diamond game board",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a cubic die and a diamond game board",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_190",
+      "category": "spatial_reasoning",
+      "difficulty": "easy",
+      "prompt": "Draw a diamond ring and a round necklace",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a diamond ring and a round necklace",
+      "hints": [
+        "Select the circle tool at coordinates (35, 445)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_191",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw four flags and one pillow",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "four flags and one pillow",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_192",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the square coaster was next to the circular glass of water.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The square coaster was next to the circular glass of water.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_193",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a flower is blooming in the field.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A flower is blooming in the field.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_194",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the crescent moon pendant with its diamond stars and spherical chain necklace looked stunning on the conical neckline of the dress.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The crescent moon pendant with its diamond stars and spherical chain necklace looked stunning on the conical neckline of the dress.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_195",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw an American multinational technology company that focuses on artificial intelligence, search engine, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "An American multinational technology company that focuses on artificial intelligence, search engine, online advertising, cloud computing, computer software, quantum computing, e-commerce, and consumer electronics.",
+      "hints": [
+        "Select the line tool at coordinates (35, 285)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_196",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw a family is watching the sunset while sitting on the beach.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A family is watching the sunset while sitting on the beach.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_197",
+      "category": "numeracy",
+      "difficulty": "medium",
+      "prompt": "Draw three tents and one car",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "three tents and one car",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_198",
+      "category": "spatial_reasoning",
+      "difficulty": "medium",
+      "prompt": "Draw the cylindrical vase with its teardrop handles and oval opening displayed a bouquet of pentagonal flowers on the square table.",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.12,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "The cylindrical vase with its teardrop handles and oval opening displayed a bouquet of pentagonal flowers on the square table.",
+      "hints": [
+        "Select the rectangle tool at coordinates (35, 365)",
+        "Pay attention to the spatial relationship between objects",
+        "Canvas center is at (590, 420), use this as reference"
+      ]
+    },
+    {
+      "id": "adapted_199",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a flower is wilting in the heat.",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "A flower is wilting in the heat.",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "adapted_200",
+      "category": "general",
+      "difficulty": "easy",
+      "prompt": "Draw a pyramidal mountain and a triangular hill",
+      "criteria": {
+        "required_tools": [
+          "pen"
+        ],
+        "min_segments": 1,
+        "min_coverage": 0.05,
+        "max_actions": 20,
+        "required_colors": [
+          "#000000"
+        ]
+      },
+      "source": "adapted",
+      "original_prompt": "a pyramidal mountain and a triangular hill",
+      "hints": [
+        "Select the pen tool at coordinates (35, 45)"
+      ]
+    },
+    {
+      "id": "precision_001",
+      "category": "precision",
+      "difficulty": "very_hard",
+      "prompt": "Draw a 3x3 grid of equally sized squares (each 80x80 pixels)",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "required_colors": [
+          "#000000"
+        ],
+        "min_segments": 12,
+        "min_coverage": 0.2
+      },
+      "hints": [
+        "Each square should be exactly 80x80 pixels",
+        "Grid should have 4 vertical and 4 horizontal lines",
+        "Start at (200, 150) for top-left corner"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "precision_002",
+      "category": "precision",
+      "difficulty": "very_hard",
+      "prompt": "Draw 5 concentric circles with exact 30-pixel spacing between each ring",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#000000",
+          "#0000FF",
+          "#FF0000"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Center at (500, 350)",
+        "Radii: 30, 60, 90, 120, 150 pixels",
+        "Use different colors for visual distinction"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "precision_003",
+      "category": "precision",
+      "difficulty": "very_hard",
+      "prompt": "Draw a checkerboard pattern with 4x4 squares alternating black and white",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "fill"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 16,
+        "min_coverage": 0.25
+      },
+      "hints": [
+        "Each square 60x60 pixels",
+        "Total grid 240x240 pixels",
+        "Alternate colors in checkerboard pattern"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "precision_004",
+      "category": "precision",
+      "difficulty": "very_hard",
+      "prompt": "Draw an analog clock showing 3:00 with hour hand, minute hand, and 12 hour marks",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "line"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000"
+        ],
+        "min_segments": 15,
+        "min_coverage": 0.18
+      },
+      "hints": [
+        "Clock face circle centered at (500, 350)",
+        "12 tick marks at exact 30-degree intervals",
+        "Hour hand pointing right, minute hand pointing up"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_001",
+      "category": "pattern",
+      "difficulty": "very_hard",
+      "prompt": "Draw a staircase with 6 steps, each step 50 pixels wide and 40 pixels tall",
+      "criteria": {
+        "required_tools": [
+          "line",
+          "rectangle"
+        ],
+        "required_colors": [
+          "#000000"
+        ],
+        "min_segments": 12,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Start at (200, 600) bottom-left",
+        "Each step connects precisely to the next",
+        "Total rise: 240 pixels, total run: 300 pixels"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_002",
+      "category": "pattern",
+      "difficulty": "very_hard",
+      "prompt": "Draw a pyramid made of circles: 1 at top, 2 in second row, 3 in third, 4 in bottom",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#FFD700",
+          "#FFA500",
+          "#FF0000"
+        ],
+        "min_segments": 10,
+        "min_coverage": 0.2
+      },
+      "hints": [
+        "Each circle 40-pixel diameter",
+        "Circles touching horizontally with 10-pixel vertical spacing",
+        "Use different colors for each row"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_003",
+      "category": "pattern",
+      "difficulty": "very_hard",
+      "prompt": "Draw a brick wall pattern with 5 rows of alternating offset rectangles",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "required_colors": [
+          "#8B4513",
+          "#A0522D"
+        ],
+        "min_segments": 20,
+        "min_coverage": 0.3
+      },
+      "hints": [
+        "Each brick 80x40 pixels",
+        "Odd rows: 6 bricks, even rows: 5 bricks (offset by half)",
+        "Alternate colors for visual distinction"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "pattern_004",
+      "category": "pattern",
+      "difficulty": "very_hard",
+      "prompt": "Draw a flower with 8 identical petals arranged in a circle around a center",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "pen"
+        ],
+        "required_colors": [
+          "#FF1493",
+          "#FFFF00"
+        ],
+        "min_segments": 9,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Center circle at (500, 350) with 30-pixel radius",
+        "8 petal circles at 45-degree intervals, 80 pixels from center",
+        "Each petal 40-pixel radius"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "composition_001",
+      "category": "composition",
+      "difficulty": "very_hard",
+      "prompt": "Draw a traffic intersection: 2 crossing roads with 4 traffic lights at corners",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "circle",
+          "line"
+        ],
+        "required_colors": [
+          "#808080",
+          "#000000",
+          "#FF0000",
+          "#FFFF00",
+          "#00FF00"
+        ],
+        "min_segments": 20,
+        "min_coverage": 0.35
+      },
+      "hints": [
+        "Two roads crossing at center (500, 350)",
+        "Each road 100 pixels wide",
+        "Traffic lights with red, yellow, green circles in black rectangles"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "composition_002",
+      "category": "composition",
+      "difficulty": "very_hard",
+      "prompt": "Draw a bar chart with 5 bars of different heights with labels and axes",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line"
+        ],
+        "required_colors": [
+          "#0000FF",
+          "#FF0000",
+          "#00FF00",
+          "#FFFF00",
+          "#FF00FF"
+        ],
+        "min_segments": 8,
+        "min_coverage": 0.25
+      },
+      "hints": [
+        "X and Y axes forming an L-shape",
+        "5 bars with heights: 80, 150, 120, 200, 100 pixels",
+        "Each bar 60 pixels wide with 20-pixel spacing",
+        "Different color for each bar"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "composition_003",
+      "category": "composition",
+      "difficulty": "very_hard",
+      "prompt": "Draw a solar system with sun at center and 4 planets at different distances",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#FFFF00",
+          "#808080",
+          "#0000FF",
+          "#FF0000",
+          "#FFA500"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.3
+      },
+      "hints": [
+        "Sun at center (500, 350) with 50-pixel radius",
+        "Planets at distances 100, 150, 200, 250 pixels from center",
+        "Planet sizes: 15, 20, 18, 25 pixel radii",
+        "Each planet different color"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "composition_004",
+      "category": "composition",
+      "difficulty": "very_hard",
+      "prompt": "Draw a detailed house with door, 2 windows, triangular roof, and chimney",
+      "criteria": {
+        "required_tools": [
+          "rectangle",
+          "line",
+          "circle"
+        ],
+        "required_colors": [
+          "#8B4513",
+          "#0000FF",
+          "#FF0000",
+          "#808080"
+        ],
+        "min_segments": 8,
+        "min_coverage": 0.2
+      },
+      "hints": [
+        "House walls: 300x250 rectangle centered at (500, 400)",
+        "Triangular roof above walls",
+        "Door: 80x150 rectangle, 2 windows: 60x60 squares",
+        "Chimney on roof"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "symmetry_001",
+      "category": "symmetry",
+      "difficulty": "very_hard",
+      "prompt": "Draw a perfectly symmetrical butterfly with 4 wings and body",
+      "criteria": {
+        "required_tools": [
+          "circle",
+          "pen"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF1493",
+          "#00BFFF"
+        ],
+        "min_segments": 6,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Body: vertical line at x=500 from (500, 250) to (500, 450)",
+        "4 wings as circles mirrored on left and right",
+        "Top wings larger (60px) than bottom wings (45px)"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "symmetry_002",
+      "category": "symmetry",
+      "difficulty": "very_hard",
+      "prompt": "Draw a snowflake with 6-fold radial symmetry using lines",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#00BFFF"
+        ],
+        "min_segments": 18,
+        "min_coverage": 0.2
+      },
+      "hints": [
+        "Center at (500, 350)",
+        "6 main spokes at 60-degree intervals, each 120 pixels long",
+        "2 side branches on each spoke at 30-degree angles"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "angle_001",
+      "category": "angle",
+      "difficulty": "very_hard",
+      "prompt": "Draw 4 lines from center at exactly 0, 45, 90, and 135 degrees",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF",
+          "#FFFF00"
+        ],
+        "min_segments": 4,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Center point at (500, 350)",
+        "Each line 150 pixels long",
+        "0°: right, 45°: up-right, 90°: up, 135°: up-left",
+        "Different color for each line"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "angle_002",
+      "category": "angle",
+      "difficulty": "very_hard",
+      "prompt": "Draw a perfect hexagon using 6 lines with 120-degree internal angles",
+      "criteria": {
+        "required_tools": [
+          "line"
+        ],
+        "required_colors": [
+          "#000000"
+        ],
+        "min_segments": 6,
+        "min_coverage": 0.12
+      },
+      "hints": [
+        "Center at (500, 350)",
+        "Each side 100 pixels long",
+        "Internal angles must be exactly 120 degrees",
+        "Vertices at 30-degree intervals from center"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "spatial_003",
+      "category": "spatial",
+      "difficulty": "very_hard",
+      "prompt": "Draw 3 overlapping circles forming a Venn diagram with visible intersections",
+      "criteria": {
+        "required_tools": [
+          "circle"
+        ],
+        "required_colors": [
+          "#FF0000",
+          "#00FF00",
+          "#0000FF"
+        ],
+        "min_segments": 3,
+        "min_coverage": 0.18
+      },
+      "hints": [
+        "Centers form an equilateral triangle",
+        "Circle 1: (400, 300), Circle 2: (600, 300), Circle 3: (500, 430)",
+        "Each circle 120-pixel radius",
+        "Different color for each circle"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "size_001",
+      "category": "size",
+      "difficulty": "very_hard",
+      "prompt": "Draw 5 squares in ascending size order: 40, 60, 80, 100, 120 pixels",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "required_colors": [
+          "#0000FF"
+        ],
+        "min_segments": 5,
+        "min_coverage": 0.2
+      },
+      "hints": [
+        "All squares centered vertically at y=350",
+        "Evenly spaced horizontally across canvas",
+        "Must be perfect squares (width = height)",
+        "Sizes must be exact"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "complex_001",
+      "category": "complex",
+      "difficulty": "very_hard",
+      "prompt": "Draw a complete tic-tac-toe game board with X and O marks filling all 9 squares",
+      "criteria": {
+        "required_tools": [
+          "line",
+          "circle"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FF0000",
+          "#0000FF"
+        ],
+        "min_segments": 15,
+        "min_coverage": 0.15
+      },
+      "hints": [
+        "Grid: 2 vertical and 2 horizontal lines creating 9 squares",
+        "5 X marks (two diagonal lines each) in red",
+        "4 O marks (circles) in blue",
+        "Each square 80x80 pixels"
+      ],
+      "source": "original"
+    },
+    {
+      "id": "complex_002",
+      "category": "complex",
+      "difficulty": "very_hard",
+      "prompt": "Draw a complete keyboard layout with 3 rows of rectangles representing keys",
+      "criteria": {
+        "required_tools": [
+          "rectangle"
+        ],
+        "required_colors": [
+          "#000000",
+          "#FFFFFF"
+        ],
+        "min_segments": 30,
+        "min_coverage": 0.25
+      },
+      "hints": [
+        "Top row: 10 keys, middle row: 9 keys, bottom row: 7 keys",
+        "Each key 45x45 pixels with 5-pixel spacing",
+        "Rows are offset (middle row starts 25px right, bottom row 50px right)",
+        "Black outline, white fill"
+      ],
+      "source": "original"
+    }
+  ]
+}

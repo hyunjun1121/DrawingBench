@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-10-16T08:10:17.351570",
+  "total_time_seconds": 20289.005472898483,
+  "total_time_minutes": 338.15009121497474,
+  "models_tested": 4,
+  "prompts_tested": 250,
+  "total_tests": 1000,
+  "results": {
+    "anthropic/claude-4-sonnet-thinking-off": {
+      "status": "success",
+      "results": null,
+      "time_taken": 5053.1674637794495
+    },
+    "openai/gpt-4.1": {
+      "status": "success",
+      "results": null,
+      "time_taken": 5175.047085285187
+    },
+    "openai/gpt-4.1-mini": {
+      "status": "success",
+      "results": null,
+      "time_taken": 4627.91406917572
+    },
+    "google/gemini-2.5-flash-thinking-off": {
+      "status": "success",
+      "results": null,
+      "time_taken": 5432.876854658127
+    }
+  }
+}

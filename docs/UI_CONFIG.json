@@ -1,0 +1,108 @@
+{
+  "canvas": {
+    "width": 1000,
+    "height": 700,
+    "offset_x": 90,
+    "offset_y": 70
+  },
+  "tools": {
+    "pen": {
+      "x": 35,
+      "y": 45,
+      "name": "Pen"
+    },
+    "eraser": {
+      "x": 35,
+      "y": 125,
+      "name": "Eraser"
+    },
+    "fill": {
+      "x": 35,
+      "y": 205,
+      "name": "Fill"
+    },
+    "line": {
+      "x": 35,
+      "y": 285,
+      "name": "Line"
+    },
+    "rectangle": {
+      "x": 35,
+      "y": 365,
+      "name": "Rectangle"
+    },
+    "circle": {
+      "x": 35,
+      "y": 445,
+      "name": "Circle"
+    }
+  },
+  "colors": {
+    "black": {
+      "x": 405,
+      "y": 25,
+      "hex": "#000000",
+      "name": "Black"
+    },
+    "red": {
+      "x": 429,
+      "y": 25,
+      "hex": "#FF0000",
+      "name": "Red"
+    },
+    "green": {
+      "x": 453,
+      "y": 25,
+      "hex": "#00FF00",
+      "name": "Green"
+    },
+    "blue": {
+      "x": 477,
+      "y": 25,
+      "hex": "#0000FF",
+      "name": "Blue"
+    },
+    "yellow": {
+      "x": 501,
+      "y": 25,
+      "hex": "#FFFF00",
+      "name": "Yellow"
+    },
+    "magenta": {
+      "x": 525,
+      "y": 25,
+      "hex": "#FF00FF",
+      "name": "Magenta"
+    },
+    "cyan": {
+      "x": 549,
+      "y": 25,
+      "hex": "#00FFFF",
+      "name": "Cyan"
+    },
+    "white": {
+      "x": 573,
+      "y": 25,
+      "hex": "#FFFFFF",
+      "name": "White"
+    }
+  },
+  "sizes": {
+    "small": {
+      "x": 35,
+      "y": 525,
+      "value": 2
+    },
+    "medium": {
+      "x": 35,
+      "y": 605,
+      "value": 5
+    },
+    "large": {
+      "x": 35,
+      "y": 685,
+      "value": 10
+    }
+  },
+  "tolerance": 12
+}

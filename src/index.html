@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Benchmark - Advanced Drawing App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Left Toolbar -->
+        <div class="toolbar" id="toolbar">
+            <div class="tool-button active" data-tool="pen">
+                <div class="tool-icon">✏️</div>
+                <div>Pen</div>
+            </div>
+            <div class="tool-button" data-tool="eraser">
+                <div class="tool-icon">🧹</div>
+                <div>Eraser</div>
+            </div>
+            <div class="tool-button" data-tool="fill">
+                <div class="tool-icon">🪣</div>
+                <div>Fill</div>
+            </div>
+            <div class="tool-button" data-tool="line">
+                <div class="tool-icon">📏</div>
+                <div>Line</div>
+            </div>
+            <div class="tool-button" data-tool="rectangle">
+                <div class="tool-icon">⬜</div>
+                <div>Rect</div>
+            </div>
+            <div class="tool-button" data-tool="circle">
+                <div class="tool-icon">⭕</div>
+                <div>Circle</div>
+            </div>
+        </div>
+
+        <!-- Canvas Area -->
+        <div class="canvas-container">
+            <!-- Top Menu Bar -->
+            <div class="menu-bar">
+                <!-- Pen Size -->
+                <div class="menu-section">
+                    <span class="menu-label">Size:</span>
+                    <div class="size-buttons" id="sizeButtons">
+                        <div class="size-button active" data-size="2">
+                            <div class="size-dot" style="width: 4px; height: 4px;"></div>
+                        </div>
+                        <div class="size-button" data-size="5">
+                            <div class="size-dot" style="width: 8px; height: 8px;"></div>
+                        </div>
+                        <div class="size-button" data-size="10">
+                            <div class="size-dot" style="width: 12px; height: 12px;"></div>
+                        </div>
+                        <div class="size-button" data-size="20">
+                            <div class="size-dot" style="width: 16px; height: 16px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Color Palette -->
+                <div class="menu-section">
+                    <span class="menu-label">Color:</span>
+                    <div class="color-palette" id="colorPalette">
+                        <div class="color-button active" data-color="#000000" style="background-color: #000000;"></div>
+                        <div class="color-button" data-color="#FF0000" style="background-color: #FF0000;"></div>
+                        <div class="color-button" data-color="#00FF00" style="background-color: #00FF00;"></div>
+                        <div class="color-button" data-color="#0000FF" style="background-color: #0000FF;"></div>
+                        <div class="color-button" data-color="#FFFF00" style="background-color: #FFFF00;"></div>
+                        <div class="color-button" data-color="#FF00FF" style="background-color: #FF00FF;"></div>
+                        <div class="color-button" data-color="#00FFFF" style="background-color: #00FFFF;"></div>
+                        <div class="color-button" data-color="#FFFFFF" style="background-color: #FFFFFF; border-color: #888;"></div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="menu-section">
+                    <button class="menu-button" onclick="app.undo()" title="Undo (Ctrl+Z)">↶</button>
+                    <button class="menu-button" onclick="app.redo()" title="Redo (Ctrl+Y)">↷</button>
+                    <button class="menu-button" onclick="app.downloadCanvas()">💾</button>
+                </div>
+            </div>
+
+            <!-- Canvas -->
+            <div class="canvas-wrapper" id="canvasWrapper">
+                <canvas id="drawingCanvas" width="1000" height="700"></canvas>
+                <div class="cursor-preview" id="cursorPreview"></div>
+            </div>
+        </div>
+
+        <!-- Right Control Panel -->
+        <div class="control-panel">
+            <div class="panel-section">
+                <div class="panel-title">Action Commands</div>
+                <textarea id="commandInput" placeholder="Enter mouse actions in JSON format...">[{"action": "moveTo", "x": 500, "y": 400}]</textarea>
+                <div class="info-text">
+                    Actions: moveTo, click, mouseDown, mouseUp, undo, redo
+                </div>
+            </div>
+
+            <div class="panel-section button-group">
+                <button class="execute-btn" onclick="executeCommands()">Execute</button>
+                <button class="execute-btn" onclick="executeWithReplay()">Execute (Replay)</button>
+            </div>
+
+            <div class="panel-section button-group">
+                <button class="clear-btn" onclick="clearCanvas()">Clear Canvas</button>
+                <button class="clear-btn" onclick="stopExecution()">Stop</button>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Status</div>
+                <div class="status" id="status">Ready</div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Performance Metrics</div>
+                <div class="metrics" id="metrics">
+                    <div>Actions: 0</div>
+                    <div>Time: 0ms</div>
+                    <div>Efficiency: N/A</div>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Action Log</div>
+                <div class="action-log" id="actionLog"></div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Current State</div>
+                <div class="coordinates" id="currentState">
+                    Tool: Pen<br>
+                    Color: #000000<br>
+                    Size: 2<br>
+                    Mouse: (0, 0)
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Evaluation</div>
+                <button class="execute-btn" onclick="runEvaluation()">Evaluate Drawing</button>
+                <div class="evaluation-result" id="evaluationResult"></div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">Screenshots (Vision Mode)</div>
+                <div class="button-group">
+                    <button class="execute-btn" onclick="downloadScreenshot('clean')" title="Capture clean UI (for turn 1)">Clean UI</button>
+                    <button class="execute-btn" onclick="downloadScreenshot('full')" title="Capture current state">Full State</button>
+                    <button class="execute-btn" onclick="downloadScreenshot('canvas')" title="Capture canvas only">Canvas Only</button>
+                </div>
+            </div>
+
+            <div class="panel-section">
+                <div class="panel-title">UI Coordinates</div>
+                <button class="execute-btn" onclick="downloadCoordinates()">Export Coordinates</button>
+                <div class="info-text" style="margin-top: 10px;">
+                    Canvas: (90, 70) to (1090, 770)<br>
+                    Tools: x=35, y=45/125/205/285/365/445<br>
+                    Sizes: y=25, x=145/195/245/295<br>
+                    Colors: y=25, x=405...741
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
