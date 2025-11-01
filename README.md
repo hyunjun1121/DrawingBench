@@ -1,8 +1,6 @@
 # DrawingBench: Evaluating Spatial Reasoning and UI Interaction in Large Language Models
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Paper](https://img.shields.io/badge/Paper-Arxiv-red)](https://arxiv.org)
-
 > **Anonymous submission for AAAI 2026 Workshop on Logical and Symbolic Reasoning in Language Models**
 
 ## Overview
