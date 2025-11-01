@@ -9,20 +9,20 @@ DrawingBench is the first comprehensive benchmark for evaluating large language 
 
 ### Key Features
 
-- 📊 **250 Diverse Prompts** across 20 categories and 4 difficulty levels
-- 🎯 **8 Objective Evaluation Criteria** with automated assessment
-- 🔄 **Multi-turn Feedback Protocol** for iterative refinement
-- 🌐 **Browser-based Drawing Application** (1000×700px canvas)
-- 📈 **Comprehensive Results** from 1,000 tests across 4 state-of-the-art LLMs
+- **250 Diverse Prompts** across 20 categories and 4 difficulty levels
+- **8 Objective Evaluation Criteria** with automated assessment
+- **Multi-turn Feedback Protocol** for iterative refinement
+- **Browser-based Drawing Application** (1000×700px canvas)
+- **Comprehensive Results** from 1,000 tests across 4 state-of-the-art LLMs
 
 ## Key Findings
 
 Our evaluation of four state-of-the-art LLMs (Claude-4 Sonnet, GPT-4.1, GPT-4.1-mini, Gemini-2.5 Flash) reveals:
 
-- ✅ **92.8% perfect score rate** on Turn 2 (score ≥ 0.9)
-- 📈 **+3.2% average improvement** with structured feedback (up to +32.8% for complex scenes)
-- 🎯 **Difficulty paradox**: "Hard" tasks achieved 100% perfect performance, outperforming "Medium" tasks (92.8%)
-- 🔍 **Specification clarity matters more than inherent complexity**
+- **92.8% perfect score rate** on Turn 2 (score ≥ 0.9)
+- **+3.2% average improvement** with structured feedback (up to +32.8% for complex scenes)
+- **Difficulty paradox**: "Hard" tasks achieved 100% perfect performance, outperforming "Medium" tasks (92.8%)
+- **Specification clarity matters more than inherent complexity**
 
 ## Repository Structure
 
