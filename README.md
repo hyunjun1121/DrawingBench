@@ -1,33 +1,40 @@
 # DrawingBench: Evaluating Spatial Reasoning and UI Interaction in Large Language Models
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-> **Anonymous submission for AAAI 2026 Workshop on Logical and Symbolic Reasoning in Language Models**
+[![Conference](https://img.shields.io/badge/AAAI%202026-TrustAgent%20Workshop-blue)](https://sites.google.com/view/trustagent-aaai2026)
+
+> **Accepted at AAAI 2026 TrustAgent Workshop**
+>
+> **Authors**: Hyunjun Kim, Sooyoung Ryu
 
 ## Overview
 
-DrawingBench is the first comprehensive benchmark for evaluating large language models (LLMs) on **spatial reasoning** and **UI interaction** through realistic mouse-based drawing tasks. Unlike traditional benchmarks that focus on question-answering, DrawingBench requires models to *construct* spatial configurations via sequences of low-level GUI actions, integrating spatial understanding, tool manipulation, and sequential planning.
+DrawingBench is a **verification framework** for evaluating the trustworthiness of agentic LLMs through spatial reasoning tasks that require generating sequences of low-level GUI actions. Unlike opaque evaluations, DrawingBench provides **transparent, rule-based assessment**: 8 objective criteria enable reproducible scoring, while action-level inspection allows stakeholders to audit agent behavior.
+
+As agentic AI systems increasingly operate autonomously, establishing trust through verifiable evaluation becomes critical. DrawingBench addresses this need by combining spatial understanding, tool manipulation, and sequential planning in a fully auditable framework.
 
 ### Key Features
 
 - **250 Diverse Prompts** across 20 categories and 4 difficulty levels
-- **8 Objective Evaluation Criteria** with automated assessment
-- **Multi-turn Feedback Protocol** for iterative refinement
-- **Browser-based Drawing Application** (1000×700px canvas)
+- **8 Objective Evaluation Criteria** with transparent, rule-based assessment
+- **External Oversight Mechanism** through multi-turn feedback for human control
+- **Browser-based Drawing Application** (1000x700px canvas)
+- **Action-level Inspection** for auditing agent behavior
 - **Comprehensive Results** from 1,000 tests across 4 state-of-the-art LLMs
 
 ## Key Findings
 
 Our evaluation of four state-of-the-art LLMs (Claude-4 Sonnet, GPT-4.1, GPT-4.1-mini, Gemini-2.5 Flash) reveals:
 
-- **92.8% perfect score rate** on Turn 2 (score ≥ 0.9)
-- **+3.2% average improvement** with structured feedback (up to +32.8% for complex scenes)
-- **Difficulty paradox**: "Hard" tasks achieved 100% perfect performance, outperforming "Medium" tasks (92.8%)
-- **Specification clarity matters more than inherent complexity**
+- **92.8% perfect score rate** on Turn 2 (score >= 0.9)
+- **+3.2% average improvement** with structured external feedback (up to +32.8% for complex scenes)
+- **Specification clarity matters more than task complexity**: models achieved 100% perfect performance when given explicit, verifiable criteria
+- **External oversight outperforms self-correction** for guiding agent behavior
 
 ## Repository Structure
 
-```
-DrawingBench_anonymous/
+```text
+DrawingBench/
 ├── README.md                          # This file
 ├── LICENSE                            # MIT License
 ├── data/
@@ -98,7 +105,7 @@ DrawingBench_anonymous/
 
 > **Note**: The results below represent aggregated findings from testing 4 state-of-the-art LLMs on all 250 prompts (1,000 total tests). Sample results from one model are included in `results/batch_results_all_all.json`. See `results/README_RESULTS.md` for information on reproducing the full experimental dataset.
 
-### Overall Performance (1,000 tests across 4 models × 250 tasks)
+### Overall Performance (1,000 tests across 4 models x 250 tasks)
 
 | Metric | Turn 1 | Turn 2 | Change |
 |--------|--------|--------|--------|
@@ -209,31 +216,34 @@ Each prompt in `dataset_consolidated.json` contains:
 
 ## Key Insights
 
-### 1. Text-based Spatial Reasoning is Highly Effective
+### 1. Transparent Evaluation Enables Trust
 
-Current LLMs demonstrate remarkably robust spatial reasoning capabilities in text-only settings, achieving 92.8% perfect scores without visual perception. Models successfully:
-- Performed coordinate calculations (e.g., finding canvas center at (590, 420))
-- Understood relative positioning ("inside", "above", "to the right of")
-- Executed complex 15+ action sequences requiring coordinated actions
+DrawingBench demonstrates that transparent, rule-based evaluation frameworks can establish trust in agentic systems. The 8 objective criteria provide:
 
-### 2. The Difficulty Paradox
+- **Reproducible scoring** across different runs and evaluators
+- **Action-level auditability** for stakeholder inspection
+- **Deterministic assessment** eliminating subjective judgment
+
+### 2. External Oversight Outperforms Self-Correction
+
+Multi-turn structured feedback proved more reliable than self-correction:
+
+- **Average improvement**: +3.2% (Turn 1 to Turn 2)
+- **Variance reduction**: -33% (0.099 to 0.066)
+- **Complex scenes**: Up to +32.8% improvement
+
+Structured, actionable feedback (e.g., "Required tool 'pen' was not used. Select it by clicking at coordinates (35, 45)") enables models to pinpoint errors and generate targeted corrections.
+
+### 3. Specification Clarity Matters More Than Complexity
 
 Counter-intuitively, "Hard" tasks achieved higher performance than "Medium" tasks:
+
 - **Hard tasks**: 0.973 (100% perfect rate)
 - **Medium tasks**: 0.958 (92.8% perfect rate)
 
 **Explanation**: This paradox stems from **specification clarity** rather than inherent complexity. Hard tasks average 4.2 explicit constraints (e.g., "4 squares in each corner") versus Medium tasks' 2.8 constraints (e.g., "draw a house"). When evaluation criteria are deterministic and unambiguous, models reliably satisfy requirements regardless of spatial complexity.
 
-### 3. Structured Feedback Drives Improvement
-
-Multi-turn feedback proved highly effective:
-- **Average improvement**: +3.2% (Turn 1 → Turn 2)
-- **Variance reduction**: -33% (0.099 → 0.066)
-- **Complex scenes**: Up to +32.8% improvement
-
-Structured, actionable feedback (e.g., "Required tool 'pen' was not used. Select it by clicking at coordinates (35, 45)") enables models to pinpoint errors and generate targeted corrections.
-
-### 4. Error Patterns Reveal Systematic Weaknesses
+### 4. Systematic Error Patterns Reveal Limitations
 
 | Error Type | Turn 1 | Turn 2 | Reduction |
 |-----------|--------|--------|-----------|
@@ -243,17 +253,18 @@ Structured, actionable feedback (e.g., "Required tool 'pen' was not used. Select
 | EFFICIENCY_WARNING | 42 | 28 | -33% |
 
 **Root causes**:
-- **Tool selection omissions** (18 tasks): Implicit tool mentions in task descriptions
-- **Coverage insufficiency** (12 tasks): Lack of explicit size specifications
+
+- **Tool state management** (18 tasks): Implicit tool mentions in task descriptions
+- **Long-horizon planning** (12 tasks): Lack of explicit size specifications
 - **Specification ambiguity** drives most errors, not model capability limitations
 
 ## Citation
 
 ```bibtex
-@inproceedings{anonymous2026drawingbench,
+@inproceedings{kim2026drawingbench,
   title={DrawingBench: Evaluating Spatial Reasoning and UI Interaction Capabilities of Large Language Models through Mouse-Based Drawing Tasks},
-  author={Anonymous Authors},
-  booktitle={AAAI 2026 Workshop on Logical and Symbolic Reasoning in Language Models},
+  author={Kim, Hyunjun and Ryu, Sooyoung},
+  booktitle={AAAI 2026 Workshop on Trustworthy Agents (TrustAgent)},
   year={2026}
 }
 ```
@@ -264,8 +275,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-For questions or feedback, please open an issue in this repository.
+For questions or feedback, please open an issue in this repository or contact the authors:
 
----
-
-**Note**: This is an anonymous submission for peer review. Author information and institutional affiliations will be added upon acceptance.
+- Hyunjun Kim
+- Sooyoung Ryu
